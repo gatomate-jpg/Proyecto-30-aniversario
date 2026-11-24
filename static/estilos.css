@@ -1,0 +1,723 @@
+:root {
+    --verde-oscuro: #183a2c;
+    --verde-principal: #23533d;
+    --verde-suave: #e9f1ec;
+    --crema-fondo: #faf8f3;
+    --blanco: #ffffff;
+    --dorado: #c8a24a;
+    --dorado-borde: #dfc37d;
+    --texto-oscuro: #24302a;
+    --texto-muted: #5e6b64;
+    --borde-suave: #d8e1dc;
+    --sombra: 0 10px 28px rgba(24, 58, 44, 0.08);
+    --radio-tarjeta: 14px;
+    --radio-img: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #e6ece8;
+    color: var(--texto-oscuro);
+    display: flex;
+    justify-content: center;
+    padding: 20px 12px 40px;
+}
+
+/* ESTA era la que faltaba - es la que usa tu app.py */
+.desktop-container {
+    width: 100%;
+    max-width: 1100px;
+    background-color: var(--crema-fondo);
+    border: 2px solid var(--dorado-borde);
+    border-radius: 26px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+/* Compatibilidad si aún usas phone-frame en algún lado */
+.phone-frame {
+    width: 100%;
+    max-width: 1100px;
+    background-color: var(--crema-fondo);
+    border: 2px solid var(--dorado-borde);
+    border-radius: 26px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px 8px;
+    border-bottom: 1px solid var(--borde-suave);
+    background-color: var(--blanco);
+}
+
+.topbar-inicio {
+    gap: 12px;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-marco {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    border: 1.5px solid var(--dorado-borde);
+    background-color: var(--blanco);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--verde-oscuro);
+}
+
+.brand-text span {
+    font-size: 12px;
+    color: var(--texto-muted);
+}
+
+.badge-30 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dorado);
+    border: 2px solid var(--dorado-borde);
+    border-radius: 999px;
+    padding: 4px 14px;
+    background-color: #fffdf8;
+}
+
+.sello-30 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dorado);
+    border: 1.5px solid var(--dorado-borde);
+    border-radius: 999px;
+    padding: 2px 10px;
+    white-space: nowrap;
+    background: #fffdf8;
+}
+
+.nav-icon {
+    text-decoration: none;
+    color: var(--verde-oscuro);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borde-suave);
+    background-color: var(--crema-fondo);
+}
+
+.rutas-bar {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 10px 18px;
+    background-color: var(--verde-suave);
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+.rutas-bar a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    padding: 7px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-suave);
+}
+
+.rutas-bar a.active {
+    background-color: var(--verde-principal);
+    color: var(--blanco);
+    border-color: var(--verde-principal);
+}
+
+.pantalla-contenido {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Encabezado que usa tu app.py */
+.encabezado-pantalla {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 0 10px;
+}
+
+.hero-titulo {
+    text-align: center;
+}
+
+.hero-titulo h1,
+.titulo-seccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    line-height: 1.12;
+    color: var(--verde-oscuro);
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: var(--texto-muted);
+    text-align: center;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.texto-base {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-oscuro);
+}
+
+.centrado {
+    text-align: center;
+}
+
+/* Tarjeta genérica que usa TODO tu app.py - esta faltaba */
+.tarjeta-bloque {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--radio-tarjeta);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarjeta-bloque h3 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--verde-principal);
+    text-align: center;
+}
+
+.tarjeta-bloque ul {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tarjeta-bloque li {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.tarjeta-centrada {
+    align-items: center;
+    text-align: center;
+}
+
+.sin-padding {
+    padding: 0;
+    overflow: hidden;
+}
+
+.etiqueta-item {
+    font-size: 12px;
+    color: var(--texto-muted);
+    line-height: 1.4;
+    text-align: center;
+}
+
+.marco-imagen {
+    border: 1.5px solid var(--dorado-borde);
+    border-radius: var(--radio-img);
+    overflow: hidden;
+    background-color: var(--blanco);
+    width: 100%;
+}
+
+.marco-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-img {
+    height: 280px;
+}
+
+.mini-img {
+    width: 120px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.cuadro-img {
+    aspect-ratio: 1 / 1;
+}
+
+.retrato-img {
+    width: 90px;
+    height: 110px;
+    flex-shrink: 0;
+}
+
+.lateral-img {
+    width: 120px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.ancho-completo {
+    height: 120px;
+}
+
+.lista-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    border: 1px solid var(--borde-suave);
+    border-left: 4px solid var(--verde-principal);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item-menu .flecha {
+    color: var(--dorado);
+    font-size: 20px;
+}
+
+.bloque-divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0;
+}
+
+.bloque-divisor span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--verde-principal);
+    background-color: var(--verde-suave);
+    border: 1px solid var(--borde-suave);
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.timeline-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timeline-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.timeline-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.timeline-dato strong {
+    font-size: 13px;
+    color: var(--verde-oscuro);
+}
+
+.timeline-dato p {
+    font-size: 12px;
+    color: var(--texto-muted);
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--dorado);
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.uniforme-inicio {
+    align-items: stretch;
+}
+
+.tarjeta-mini,
+.tarjeta-categoria,
+.tarjeta-info,
+.tarjeta-lista,
+.tarjeta-destaque,
+.tarjeta-galeria,
+.tarjeta-aviso {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--radio-tarjeta);
+    padding: 10px;
+}
+
+.tarjeta-mini,
+.tarjeta-categoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+}
+
+.tarjeta-mini span {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    text-align: center;
+}
+
+.cat-etiqueta {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--verde-principal);
+    letter-spacing: 0.04em;
+}
+
+.tarjeta-perfil {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.perfil-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.perfil-texto strong {
+    font-size: 14px;
+    color: var(--verde-oscuro);
+}
+
+.perfil-texto span {
+    font-size: 11px;
+    color: var(--dorado);
+    font-weight: 600;
+}
+
+.perfil-texto p {
+    font-size: 13px;
+    color: var(--texto-muted);
+    line-height: 1.4;
+}
+
+.tarjeta-frase {
+    background-color: var(--verde-suave);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.comillas {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--dorado);
+}
+
+.tarjeta-frase p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--verde-oscuro);
+}
+
+.banner-foto {
+    position: relative;
+    border-radius: var(--radio-tarjeta);
+    overflow: hidden;
+    height: 160px;
+    border: 1.5px solid var(--dorado-borde);
+}
+
+.banner-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(24, 58, 44, 0.85), rgba(24, 58, 44, 0.25));
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 12px;
+}
+
+.banner-overlay p {
+    color: var(--blanco);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bloque-doble {
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.tarjeta-lista h3,
+.tarjeta-info h3,
+.tarjeta-galeria h3,
+.tarjeta-aviso h3,
+.columna-lista h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--verde-principal);
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.tarjeta-lista ul,
+.tarjeta-info ul,
+.columna-lista ul {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tarjeta-lista li,
+.tarjeta-info li,
+.columna-lista li {
+    font-size: 11px;
+    color: var(--texto-oscuro);
+    line-height: 1.35;
+}
+
+.tarjeta-destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta-info.centrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.bloque-futuro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-suave);
+    border-radius: var(--radio-tarjeta);
+    padding: 12px;
+}
+
+.columna-lista {
+    flex: 1;
+}
+
+.columna-lista h3 {
+    text-align: left;
+}
+
+.cita-final {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    text-align: center;
+    padding: 4px 8px;
+}
+
+.banner-verde,
+.banner-cierre {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    border-radius: var(--radio-tarjeta);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: 1px solid var(--dorado-borde);
+}
+
+.banner-verde span:first-child,
+.banner-cierre p {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* CUESTIONARIO - pantalla 6 - esto tampoco lo tenías */
+.cuestionario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pregunta-card {
+    gap: 8px;
+}
+
+.pregunta-titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+}
+
+.campo-respuesta {
+    width: 100%;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 10px 12px;
+    border: 1px solid var(--borde-suave);
+    border-radius: 10px;
+    resize: vertical;
+    background: #fffdf8;
+}
+
+.campo-respuesta:focus {
+    outline: 2px solid var(--dorado-borde);
+    border-color: var(--dorado);
+}
+
+.acciones-cuestionario {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-enviar {
+    background: var(--verde-principal);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background: var(--verde-oscuro);
+}
+
+.resumen-cuestionario {
+    border-color: var(--dorado-borde);
+    background: #fffdf8;
+}
+
+.resumen-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.respuesta-item strong {
+    font-size: 13px;
+    color: var(--verde-principal);
+}
+
+.respuesta-item p {
+    font-size: 13px;
+    color: var(--texto-oscuro);
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+/* Responsive para celular */
+@media (max-width: 700px) {
+    .grid-2, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    .titulo-seccion {
+        font-size: 28px;
+    }
+    .hero-img {
+        height: 200px;
+    }
+    .tarjeta-perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
